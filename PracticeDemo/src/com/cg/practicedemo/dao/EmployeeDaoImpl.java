@@ -36,11 +36,12 @@ public class EmployeeDaoImpl implements EmployeeDao{
 			throw new EmployeeException("No employee data found");
 		if(map.containsKey(id)) {
 			map.remove(id);
+			List<Employee> list = new ArrayList<Employee>(map.values());
+			return list;
 			}
 		else
 			System.out.println("Employee not found");
-		List<Employee> list = new ArrayList<Employee>(map.values());
-		return list;
+			return null;
 		
 	}
 }
